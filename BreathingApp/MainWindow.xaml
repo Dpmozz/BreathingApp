@@ -1,0 +1,53 @@
+﻿<Window x:Class="BreathingApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BreathingApp"
+        mc:Ignorable="d"
+        Title="Breath Control Training" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="MainWindows">
+        <ProgressBar x:Name="pgbHoldFull" HorizontalAlignment="Left" Height="34" Margin="243,118,0,0" VerticalAlignment="Top" Width="310" IsTabStop="False"/>
+        <ProgressBar x:Name="pgbExhale" HorizontalAlignment="Left" Height="34" Margin="417,293,0,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="0.5,0.5" IsTabStop="False">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="90"/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <ProgressBar x:Name="pgbHoldEmpty" HorizontalAlignment="Left" Height="34" Margin="243,467,0,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="0.5,0.5" IsTabStop="False">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="180"/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <ProgressBar x:Name="pgbInhale" HorizontalAlignment="Left" Height="34" Margin="70,293,0,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="0.5,0.5" IsTabStop="False">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="-90"/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Label HorizontalAlignment="Center" Margin="0,71,0,0" Content="HOLD-FULL" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Label HorizontalAlignment="Left" Margin="84,265,0,0" Content="INHALE" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Label HorizontalAlignment="Left" Margin="595,265,0,0" Content="EXHALE" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" />
+        <Label HorizontalAlignment="Center" Margin="0,498,0,0" Content="HOLD-EMPTY" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Button x:Name="pbSTART" Content="START" HorizontalAlignment="Left" Height="41" Margin="12,412,0,0" VerticalAlignment="Top" Width="81" FontSize="20" FontWeight="Bold" Background="#FF00DD00" Click="pbSTART_Click" TabIndex="5"/>
+        <Button x:Name="pbSTOP" Content="STOP" HorizontalAlignment="Left" Height="41" Margin="12,461,0,0" VerticalAlignment="Top" Width="81" FontSize="20" FontWeight="Bold" Background="#FFDD0000" Click="pbSTOP_Click" TabIndex="6"/>
+        <Button x:Name="pbRESET" Content="RESET" HorizontalAlignment="Left" Height="41" Margin="12,510,0,0" VerticalAlignment="Top" Width="81" FontSize="20" FontWeight="Bold" Background="#FF00DDDD" Click="pbRESET_Click" TabIndex="7"/>
+        <Rectangle HorizontalAlignment="Center" Height="69" VerticalAlignment="Top" Width="800" Fill="#FFB1B1B1" Margin="0,-3,0,0"/>
+        <Label x:Name="lblTOTALTIME" Content="00:00:00" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Width="172" FontWeight="Bold" Height="54" Margin="0,261,0,0"/>
+        <Label x:Name="lblTitleTotalTime" Content="TOTAL TIME" HorizontalAlignment="Center" Height="33" Margin="0,241,0,0" VerticalAlignment="Top" Width="116" SnapsToDevicePixels="True" FontSize="18" FontWeight="Bold"/>
+        <TextBox x:Name="txbHoldFullSP" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="326,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontWeight="Normal" FontSize="20" TextChanged="txbHoldFullSP_TextChanged" TabIndex="2"/>
+        <TextBox x:Name="txbExhaleSP" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="502,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontWeight="Normal" FontSize="20" TextChanged="txbExhaleSP_TextChanged" TabIndex="3"/>
+        <TextBox x:Name="txbHoldEmptySP" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="720,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" FontWeight="Normal" FontSize="20" TextChanged="txbHoldEmptySP_TextChanged" TabIndex="4"/>
+        <TextBox x:Name="txbInhaleSP" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="114,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"  FontSize="20" FontWeight="Normal" TextChanged="txbInhaleSP_TextChanged" TabIndex="1"/>
+        <Label HorizontalAlignment="Left" Margin="35,13,0,0" Content="INHALE" VerticalAlignment="Top" FontSize="20" FontWeight="Normal"/>
+        <Label HorizontalAlignment="Left" Margin="210,13,0,0" Content="HOLD-FULL" VerticalAlignment="Top" FontSize="20" FontWeight="Normal"/>
+        <Label HorizontalAlignment="Left" Margin="425,13,0,0" Content="EXHALE" VerticalAlignment="Top" FontSize="20" FontWeight="Normal" />
+        <Label HorizontalAlignment="Left" Margin="586,13,0,0" Content="HOLD-EMPTY" VerticalAlignment="Top" FontSize="20" FontWeight="Normal"/>
+
+
+    </Grid>
+</Window>
